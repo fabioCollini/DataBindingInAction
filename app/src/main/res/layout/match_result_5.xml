@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="result"
+            type="it.droidcon.databinding.data.MatchResult"/>
+    </data>
+
+    <LinearLayout style="@style/root_layout">
+
+        <ImageView
+            android:id="@+id/result_gif"
+            style="@style/gif"
+            app:imageUrl="@{result.gifUrl}"/>
+
+        <include
+            layout="@layout/team"
+            bind:backgroundColor="@{@color/colorAccent}"
+            bind:team="@{result.homeTeam}"/>
+
+        <include
+            layout="@layout/team"
+            bind:team="@{result.awayTeam}"/>
+
+    </LinearLayout>
+</layout>

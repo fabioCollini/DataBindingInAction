@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Data Binding</string>
+    <string name="reload">Reload</string>
+    <string name="send">Send</string>
+</resources>

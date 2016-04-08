@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout style="@style/root_layout">
+
+        <ImageView
+            android:id="@+id/result_gif"
+            style="@style/gif"/>
+
+        <LinearLayout style="@style/team_layout">
+
+            <TextView
+                android:id="@+id/home_team"
+                style="@style/name"/>
+
+            <TextView
+                android:id="@+id/home_goals"
+                style="@style/goals"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/team_layout">
+
+            <TextView
+                android:id="@+id/away_team"
+                style="@style/name"/>
+
+            <TextView
+                android:id="@+id/away_goals"
+                style="@style/goals"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

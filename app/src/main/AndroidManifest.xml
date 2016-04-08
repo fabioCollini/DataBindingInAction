@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="it.droidcon.databinding"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity android:name="it.droidcon.databinding.main.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity android:label="butterknife" android:name=".e1_butterknife.MatchResult1Activity"/>
+    <activity android:label="binding" android:name=".e2_binding.MatchResult2Activity"/>
+    <activity android:label="binding_object" android:name=".e3_binding_object.MatchResult3Activity"/>
+    <activity android:label="custom_attributes" android:name=".e4_custom_attributes.MatchResult4Activity"/>
+    <activity android:label="include" android:name=".e5_include.MatchResult5Activity"/>
+    <activity android:label="viewmodel" android:name=".e6_viewmodel.MatchResult6Activity"/>
+    <activity android:label="contact" android:name=".contact_1.ContactActivity"/>
+    <activity android:label="Data Binding" android:name=".contact_2.ContactActivity"/>
+    <activity android:label="contact 3" android:name=".contact_3.ContactActivity"/>
+  </application>
+
+</manifest>

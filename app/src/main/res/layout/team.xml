@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="team"
+            type="it.droidcon.databinding.data.TeamScore"/>
+
+        <variable
+            name="backgroundColor"
+            type="Integer"/>
+    </data>
+
+    <LinearLayout
+        style="@style/team_layout"
+        android:background="@{backgroundColor ?? @color/colorPrimary}">
+
+        <TextView
+            style="@style/name"
+            android:text="@{team.name}"/>
+
+        <TextView
+            style="@style/goals"
+            app:goals="@{team.goals}"/>
+    </LinearLayout>
+</layout>

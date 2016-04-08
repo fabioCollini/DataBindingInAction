@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="reloadable"
+            type="it.droidcon.databinding.Reloadable"/>
+    </data>
+
+    <LinearLayout style="@style/reload_layout">
+
+        <TextView
+            style="@style/error_message"
+            android:text="@{reloadable.errorMessage}"/>
+
+        <Button
+            style="@style/reload"
+            android:onClick="@{reloadable.reload}"
+            android:text="@string/reload"/>
+    </LinearLayout>
+</layout>

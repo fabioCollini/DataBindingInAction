@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="result"
+            type="it.droidcon.databinding.data.MatchResult"/>
+    </data>
+
+    <LinearLayout style="@style/root_layout">
+
+        <ImageView
+            style="@style/gif"
+            app:imageUrl="@{result.gifUrl}"/>
+
+        <LinearLayout style="@style/team_layout">
+
+            <TextView
+                style="@style/name"
+                android:text="@{result.homeTeam.name}"/>
+
+            <TextView
+                style="@style/goals"
+                android:text="@{Integer.toString(result.homeTeam.goals)}"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/team_layout">
+
+            <TextView
+                style="@style/name"
+                android:text="@{result.awayTeam.name}"/>
+
+            <TextView
+                style="@style/goals"
+                android:text="@{Integer.toString(result.awayTeam.goals)}"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

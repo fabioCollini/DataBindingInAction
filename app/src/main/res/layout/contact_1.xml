@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="info"
+            type="it.droidcon.databinding.contact_1.ContactInfo"/>
+    </data>
+
+    <LinearLayout style="@style/contact_root">
+
+        <EditText
+            style="@style/contact_text"
+            android:enabled="@{info.messageAvailable}"
+            android:text="@{info.message}"/>
+
+        <Button
+            style="@style/contact_button"
+            android:enabled="@{info.messageAvailable}"
+            android:onClick="send"/>
+    </LinearLayout>
+</layout>
