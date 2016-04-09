@@ -19,6 +19,7 @@ public class MatchResult6Activity extends AppCompatActivity {
         MatchResult6Binding binding =
                 DataBindingUtil.setContentView(this, R.layout.match_result_6);
         MatchResult result = getIntent().getParcelableExtra("RESULT");
-        binding.setViewModel(new MatchResultViewModel(MatchResultLoader.singleton(), new SnackbarManager(this), Schedulers.io(), AndroidSchedulers.mainThread(), result));
+        binding.setViewModel(new MatchResultViewModel(MatchResultLoader.singleton(),
+                new SnackbarManager(this), Schedulers.io(), AndroidSchedulers.mainThread(), result));
     }
 }

@@ -14,7 +14,7 @@
 
         <LinearLayout
             style="@style/root_layout"
-            android:onClick="@{viewModel.reload}">
+            android:onClick="@{viewModel::reload}">
 
             <ImageView
                 android:id="@+id/result_gif"

@@ -17,14 +17,11 @@ public class MatchResultViewModel {
     public final ObservableBoolean loading = new ObservableBoolean();
     private Scheduler ioScheduler;
     private Scheduler uiScheduler;
-  /*...*/
-
 
     public MatchResultViewModel(MatchResultLoader matchResultLoader, SnackbarManager snackbarManager,
                                 Scheduler ioScheduler, Scheduler uiScheduler, MatchResult result) {
         this.matchResultLoader = matchResultLoader;
         this.snackbarManager = snackbarManager;
-        long dirtyFlags = /*…*/0;
         this.ioScheduler = ioScheduler;
         this.uiScheduler = uiScheduler;
         this.result.set(result);
