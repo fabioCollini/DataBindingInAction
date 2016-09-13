@@ -26,12 +26,13 @@ public class MatchResultLoader {
 
     @NonNull
     public static MatchResultLoader singleton() {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            client.interceptors().add(interceptor);
+            builder.addInterceptor(interceptor);
         }
+        OkHttpClient client = builder.build();
 
         return new MatchResultLoader(
                 retrofit(client, "http://api.football-data.org/").create(FootballDataService.class),
