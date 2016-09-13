@@ -1,6 +1,6 @@
 package it.droidcon.databinding.data;
 
-import retrofit.http.GET;
+import retrofit2.http.GET;
 import rx.Observable;
 
 public interface FootballDataService {

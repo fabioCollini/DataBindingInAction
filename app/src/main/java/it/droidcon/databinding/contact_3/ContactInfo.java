@@ -2,12 +2,8 @@ package it.droidcon.databinding.contact_3;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-
 import it.droidcon.databinding.BR;
 
-/**
- * Created by fabiocollini on 26/03/16.
- */
 public class ContactInfo extends BaseObservable {
     private String message;
 

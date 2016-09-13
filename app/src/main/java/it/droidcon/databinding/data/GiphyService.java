@@ -1,7 +1,7 @@
 package it.droidcon.databinding.data;
 
-import retrofit.http.GET;
-import retrofit.http.Query;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 import rx.Observable;
 
 public interface GiphyService {

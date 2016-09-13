@@ -1,14 +1,12 @@
 package it.droidcon.databinding.data;
 
 import android.support.annotation.NonNull;
-
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
-
 import it.droidcon.databinding.BuildConfig;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
-import retrofit.RxJavaCallAdapterFactory;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 
 public class MatchResultLoader {
@@ -56,7 +54,10 @@ public class MatchResultLoader {
                 .flatMapIterable(ApiResponse::getFixtures)
                 .filter(f -> "FINISHED".equals(f.getStatus()))
                 .last()
-                .flatMap(f -> giphyService.randomGif(getSearchTag(f)).map(GiphyResponse::getData).map(GiphyData::getUrl).map(url -> new MatchResult(f, url)));
+                .flatMap(f -> giphyService.randomGif(getSearchTag(f))
+                        .map(GiphyResponse::getData)
+                        .map(GiphyData::getUrl)
+                        .map(url -> new MatchResult(f, url)));
     }
 
     private String getSearchTag(Fixture f) {

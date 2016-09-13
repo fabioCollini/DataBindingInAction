@@ -6,15 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import it.droidcon.databinding.R;
 import it.droidcon.databinding.databinding.Contact1Binding;
 
 import static android.support.design.widget.Snackbar.LENGTH_LONG;
 
-/**
- * Created by fabiocollini on 26/03/16.
- */
 public class ContactActivity extends AppCompatActivity {
 
     private ContactInfo contactInfo;

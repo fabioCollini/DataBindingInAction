@@ -5,26 +5,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import com.bumptech.glide.Glide;
 import it.droidcon.databinding.R;
 import it.droidcon.databinding.data.MatchResult;
 
 public class MatchResult1Activity extends AppCompatActivity {
 
-    @Bind(R.id.result_gif)
-    ImageView resultGif;
-    @Bind(R.id.home_team)
-    TextView homeTeam;
-    @Bind(R.id.away_team)
-    TextView awayTeam;
-    @Bind(R.id.home_goals)
-    TextView homeGoals;
-    @Bind(R.id.away_goals)
-    TextView awayGoals;
+    @BindView(R.id.result_gif) ImageView resultGif;
+    @BindView(R.id.home_team) TextView homeTeam;
+    @BindView(R.id.away_team) TextView awayTeam;
+    @BindView(R.id.home_goals) TextView homeGoals;
+    @BindView(R.id.away_goals) TextView awayGoals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
