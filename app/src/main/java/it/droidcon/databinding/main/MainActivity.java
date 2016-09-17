@@ -9,10 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.Arrays;
-import java.util.List;
-
 import it.cosenonjaviste.mv2m.ViewModelActivity;
 import it.cosenonjaviste.mv2m.rx.AndroidSchedulerManager;
 import it.droidcon.databinding.R;
@@ -25,7 +21,10 @@ import it.droidcon.databinding.e3_binding_object.MatchResult3Activity;
 import it.droidcon.databinding.e4_custom_attributes.MatchResult4Activity;
 import it.droidcon.databinding.e5_include.MatchResult5Activity;
 import it.droidcon.databinding.e6_viewmodel.MatchResult6Activity;
+import it.droidcon.databinding.login.LoginActivity;
 import it.droidcon.databinding.utils.SnackbarManager;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends ViewModelActivity<MainViewModel> {
 
@@ -52,7 +51,8 @@ public class MainActivity extends ViewModelActivity<MainViewModel> {
                 MatchResult6Activity.class,
                 ContactActivity.class,
                 it.droidcon.databinding.contact_2.ContactActivity.class,
-                it.droidcon.databinding.contact_3.ContactActivity.class
+                it.droidcon.databinding.contact_3.ContactActivity.class,
+                LoginActivity.class
         );
 
         binding.recyclerView.setAdapter(new RecyclerView.Adapter<ActivityClassViewHolder>() {
