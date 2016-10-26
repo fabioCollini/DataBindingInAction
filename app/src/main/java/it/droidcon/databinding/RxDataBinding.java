@@ -5,6 +5,7 @@ import android.databinding.Observable.OnPropertyChangedCallback;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
+import android.databinding.ObservableInt;
 import android.databinding.ObservableList;
 import java.util.List;
 import rx.AsyncEmitter;
@@ -21,6 +22,20 @@ public class RxDataBinding {
             };
             observableBoolean.addOnPropertyChangedCallback(callback);
             emitter.setCancellation(() -> observableBoolean.removeOnPropertyChangedCallback(callback));
+        }, AsyncEmitter.BackpressureMode.BUFFER);
+    }
+
+    public static rx.Observable<Integer> toRx(ObservableInt observableInt) {
+        return rx.Observable.fromEmitter(emitter -> {
+            emitter.onNext(observableInt.get());
+            OnPropertyChangedCallback callback = new OnPropertyChangedCallback() {
+                @Override
+                public void onPropertyChanged(Observable observable, int i) {
+                    emitter.onNext(((ObservableInt) observable).get());
+                }
+            };
+            observableInt.addOnPropertyChangedCallback(callback);
+            emitter.setCancellation(() -> observableInt.removeOnPropertyChangedCallback(callback));
         }, AsyncEmitter.BackpressureMode.BUFFER);
     }
 

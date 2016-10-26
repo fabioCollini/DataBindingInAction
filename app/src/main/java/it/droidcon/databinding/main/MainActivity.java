@@ -22,6 +22,7 @@ import it.droidcon.databinding.e4_custom_attributes.MatchResult4Activity;
 import it.droidcon.databinding.e5_include.MatchResult5Activity;
 import it.droidcon.databinding.e6_viewmodel.MatchResult6Activity;
 import it.droidcon.databinding.login.LoginActivity;
+import it.droidcon.databinding.question.QuestionActivity;
 import it.droidcon.databinding.utils.SnackbarManager;
 import java.util.Arrays;
 import java.util.List;
@@ -52,7 +53,9 @@ public class MainActivity extends ViewModelActivity<MainViewModel> {
                 ContactActivity.class,
                 it.droidcon.databinding.contact_2.ContactActivity.class,
                 it.droidcon.databinding.contact_3.ContactActivity.class,
-                LoginActivity.class
+                LoginActivity.class,
+                QuestionActivity.class,
+                it.droidcon.databinding.question_viewmodel.QuestionActivity.class
         );
 
         binding.recyclerView.setAdapter(new RecyclerView.Adapter<ActivityClassViewHolder>() {

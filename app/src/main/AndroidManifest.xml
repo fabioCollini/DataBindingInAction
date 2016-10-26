@@ -29,6 +29,14 @@
     <activity android:label="Data Binding" android:name=".contact_2.ContactActivity"/>
     <activity android:label="contact 3" android:name=".contact_3.ContactActivity"/>
     <activity android:label="Login" android:name=".login.LoginActivity"/>
+    <activity android:label="Question" android:name=".question.QuestionActivity"/>
+    <activity android:label="Question ViewModel" android:name=".question_viewmodel.QuestionActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>

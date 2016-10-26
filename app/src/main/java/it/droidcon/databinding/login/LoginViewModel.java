@@ -1,10 +1,7 @@
 package it.droidcon.databinding.login;
 
 import android.os.Bundle;
-import rx.Observable;
 import rx.subscriptions.CompositeSubscription;
-
-import static it.droidcon.databinding.RxDataBinding.toRx;
 
 public class LoginViewModel extends BaseRxViewModel<LoginModel> {
 
@@ -19,14 +16,14 @@ public class LoginViewModel extends BaseRxViewModel<LoginModel> {
     }
 
     @Override protected void onStart(CompositeSubscription subscription) {
-        subscription.add(
-                Observable.combineLatest(
-                        toRx(model.userName),
-                        toRx(model.password),
-                        connectionChecker.getConnectionStatus(),
-                        (userName, password, connected) ->
-                                !userName.isEmpty() && !password.isEmpty() && connected
-                ).subscribe(model.sendVisible::set)
-        );
+        //subscription.add(
+        //        Observable.combineLatest(
+        //                toRx(model.userName),
+        //                toRx(model.password),
+        //                connectionChecker.getConnectionStatus(),
+        //                (userName, password, connected) ->
+        //                        !userName.isEmpty() && !password.isEmpty() && connected
+        //        ).subscribe(model.sendEnabled::set)
+        //);
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <data>
+    <variable
+      name="viewMode"
+      type="it.droidcon.databinding.question_viewmodel.QuestionViewModel"/>
+  </data>
+
+  <LinearLayout style="@style/form_root">
+    <TextView style="@style/question"/>
+
+    <EditText style="@style/answer"
+      android:text="@={viewMode.model.answer}" />
+
+    <Button style="@style/form_button"
+      android:enabled="@{viewMode.model.sendEnabled}"/>
+
+    <TextView style="@style/countdown"
+      android:text="@{Integer.toString(viewMode.model.countdown)}" />
+  </LinearLayout>
+</layout>

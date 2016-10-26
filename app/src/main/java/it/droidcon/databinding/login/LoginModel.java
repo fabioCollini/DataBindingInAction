@@ -1,33 +1,53 @@
 package it.droidcon.databinding.login;
 
-import android.databinding.ObservableBoolean;
-import android.databinding.ObservableField;
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.os.Parcel;
 import android.os.Parcelable;
+import it.droidcon.databinding.BR;
 
-public class LoginModel implements Parcelable {
-    public final ObservableField<String> userName;
+public class LoginModel extends BaseObservable implements Parcelable {
+    private String userName = "";
 
-    public final ObservableField<String> password;
-
-    public final ObservableBoolean sendVisible;
+    private String password = "";
 
     public LoginModel() {
-        userName = new ObservableField<>("");
-        password = new ObservableField<>("");
-        sendVisible = new ObservableBoolean();
     }
 
     protected LoginModel(Parcel in) {
-        userName = (ObservableField<String>) in.readSerializable();
-        password = (ObservableField<String>) in.readSerializable();
-        sendVisible = new ObservableBoolean();
+        userName = in.readString();
+        password = in.readString();
+    }
+
+
+    @Bindable public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+        notifyPropertyChanged(BR.userName);
+        notifyPropertyChanged(BR.sendVisible);
+    }
+
+    @Bindable public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+        notifyPropertyChanged(BR.password);
+        notifyPropertyChanged(BR.sendVisible);
+    }
+
+    @Bindable public boolean isSendVisible() {
+        return !userName.isEmpty() && !password.isEmpty();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(userName);
-        dest.writeSerializable(password);
+        dest.writeString(userName);
+        dest.writeString(password);
     }
 
     @Override

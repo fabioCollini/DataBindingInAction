@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <data>
+    <variable
+      name="info"
+      type="it.droidcon.databinding.question.QuestionInfo"/>
+  </data>
+
+  <LinearLayout style="@style/form_root">
+    <TextView style="@style/question"/>
+
+    <EditText style="@style/answer"
+      android:text="@={info.answer}" />
+
+    <Button style="@style/form_button"
+      android:enabled="@{info.countdown > 0 &amp;&amp; !info.answer.empty}"/>
+
+    <TextView style="@style/countdown"
+      android:text="@{Integer.toString(info.countdown)}" />
+  </LinearLayout>
+</layout>
