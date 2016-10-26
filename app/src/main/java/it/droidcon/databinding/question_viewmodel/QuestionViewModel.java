@@ -14,7 +14,7 @@ public class QuestionViewModel extends BaseRxViewModel<QuestionModel> {
         return new QuestionModel();
     }
 
-    @Override protected void onCreate(CompositeSubscription subscription) {
+    @Override protected void onCreateViewModel(CompositeSubscription subscription) {
         subscription.add(
                 Observable.interval(1, TimeUnit.SECONDS)
                         .limit(10)

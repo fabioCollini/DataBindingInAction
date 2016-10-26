@@ -20,12 +20,12 @@ public abstract class BaseViewModel<M extends Parcelable> extends DefaultLifeCyc
         } else {
             model = createModel(arguments);
         }
-        onCreate();
+        onCreate(savedInstanceState == null);
     }
 
     protected abstract M createModel(Bundle arguments);
 
-    public void onCreate() {
+    public void onCreate(boolean firstStart) {
     }
 
     @Override public final void onStart(Object view) {
