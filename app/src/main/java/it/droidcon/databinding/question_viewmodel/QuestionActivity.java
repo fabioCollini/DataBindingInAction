@@ -8,12 +8,14 @@ import it.codingjam.lifecyclebinder.LifeCycleBinder;
 import it.codingjam.lifecyclebinder.RetainedObjectProvider;
 import it.droidcon.databinding.R;
 import it.droidcon.databinding.databinding.QuestionViewModelBinding;
+import it.droidcon.databinding.utils.ConnectionChecker;
 import java.util.concurrent.Callable;
 
 public class QuestionActivity extends AppCompatActivity {
 
     @RetainedObjectProvider("viewModel")
-    Callable<QuestionViewModel> viewModelFactory = QuestionViewModel::new;
+    Callable<QuestionViewModel> viewModelFactory =
+            () -> new QuestionViewModel(new ConnectionChecker(getApplicationContext()));
 
     QuestionViewModel viewModel;
 
