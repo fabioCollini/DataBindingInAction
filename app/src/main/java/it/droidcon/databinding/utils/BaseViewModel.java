@@ -1,4 +1,4 @@
-package it.droidcon.databinding.login;
+package it.droidcon.databinding.utils;
 
 import android.content.Intent;
 import android.os.Bundle;

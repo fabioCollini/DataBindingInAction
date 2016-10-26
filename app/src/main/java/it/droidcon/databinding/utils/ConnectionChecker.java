@@ -1,4 +1,4 @@
-package it.droidcon.databinding.login;
+package it.droidcon.databinding.utils;
 
 import android.content.Context;
 import android.content.IntentFilter;

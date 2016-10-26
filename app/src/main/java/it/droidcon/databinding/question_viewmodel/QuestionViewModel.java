@@ -1,7 +1,7 @@
 package it.droidcon.databinding.question_viewmodel;
 
 import android.os.Bundle;
-import it.droidcon.databinding.login.BaseRxViewModel;
+import it.droidcon.databinding.utils.BaseRxViewModel;
 import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.subscriptions.CompositeSubscription;

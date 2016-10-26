@@ -1,6 +1,8 @@
 package it.droidcon.databinding.login;
 
 import android.os.Bundle;
+import it.droidcon.databinding.utils.BaseRxViewModel;
+import it.droidcon.databinding.utils.ConnectionChecker;
 import rx.subscriptions.CompositeSubscription;
 
 public class LoginViewModel extends BaseRxViewModel<LoginModel> {

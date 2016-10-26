@@ -14,6 +14,7 @@ import it.codingjam.lifecyclebinder.LifeCycleBinder;
 import it.codingjam.lifecyclebinder.RetainedObjectProvider;
 import it.droidcon.databinding.R;
 import it.droidcon.databinding.databinding.LoginBinding;
+import it.droidcon.databinding.utils.ConnectionChecker;
 import java.util.concurrent.Callable;
 
 import static android.support.design.widget.Snackbar.LENGTH_LONG;
